@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/grey_light"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@drawable/gradient_bg_light_grey">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="85dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.SmallComponent"
+            tools:src="@color/design_default_color_primary" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_cover"
+            app:layout_constraintTop_toTopOf="@+id/iv_cover"
+            tools:text="Produk Domestik Regional Bruto Kabupaten Lampung Tengah Menurut Pengeluaran, 2020-2024" />
+
+        <TextView
+            android:id="@+id/tv_release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="2025-04-30" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_lihat"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="3dp"
+            android:text="Lihat"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:icon="@drawable/ic_eye"
+            app:iconTint="@color/white"
+            app:iconSize="16dp"
+            android:backgroundTint="@color/tombolLihat"
+            app:cornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_release_date"
+            app:layout_constraintTop_toBottomOf="@+id/tv_release_date" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_unduh"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:text="Unduh"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:icon="@drawable/ic_download"
+            app:iconTint="@color/white"
+            app:iconSize="16dp"
+            android:backgroundTint="@color/tombolUnduh"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_lihat"
+            app:layout_constraintStart_toEndOf="@+id/btn_lihat"
+            app:layout_constraintTop_toTopOf="@+id/btn_lihat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

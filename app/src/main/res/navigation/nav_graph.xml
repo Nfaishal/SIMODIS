@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+    android:id="@+id/homeFragment"
+    android:name="com.example.simodis.ui.home.HomeFragment"
+    android:label="fragment_home"
+    tools:layout="@layout/fragment_home"/>
+    <action
+        android:id="@+id/action_homeFragment_to_indikatorDetailFragment"
+        app:destination="@id/indikatorDetailFragment" />
+
+    <fragment
+        android:id="@+id/indikatorDetailFragment"
+        android:name="com.example.simodis.ui.home.IndikatorDetailFragment"
+        android:label="fragment_indikator_detail"
+        tools:layout="@layout/fragment_indikator_detail" >
+        <argument
+            android:name="indikator_id"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/publikasiFragment"
+        android:name="com.example.simodis.ui.publikasi.PublikasiFragment"
+        android:label="fragment_publikasi"
+        tools:layout="@layout/fragment_publikasi" />
+    <action
+        android:id="@+id/action_publikasiFragment_to_publikasiDetailFragment"
+        app:destination="@id/publikasiDetailFragment" />
+
+    <fragment
+        android:id="@+id/publikasiDetailFragment"
+        android:name="com.example.simodis.ui.publikasi.PublikasiDetailFragment"
+        android:label="fragment_publikasi_detail"
+        tools:layout="@layout/fragment_publikasi_detail" >
+        <argument
+            android:name="pub_id"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/informasiFragment"
+        android:name="com.example.simodis.ui.informasi.InformasiFragment"
+        android:label="fragment_informasi"
+        tools:layout="@layout/fragment_informasi" />
+
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.example.simodis.ui.data.DataHubFragment"
+        android:label="fragment_data_hub"
+        tools:layout="@layout/fragment_data_hub" />
+
+
+</navigation>

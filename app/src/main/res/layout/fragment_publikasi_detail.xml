@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.publikasi.PublikasiDetailFragment">
+
+    <!-- Header dengan Tombol Kembali -->
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="4dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_header_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Detail Publikasi"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+        app:layout_constraintStart_toEndOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Konten yang bisa di-scroll -->
+    <ScrollView
+        android:id="@+id/content_scrollview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Sampul dan Judul Utama -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_cover"
+                android:layout_width="150dp"
+                android:layout_height="210dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                app:cornerSize="20dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.SmallComponent"
+                tools:src="@color/grey" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Kabupaten Lampung Tengah Dalam Angka 2025" />
+
+            <TextView
+                android:id="@+id/tv_release_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                tools:text="Dirilis pada: 2025-02-28"
+                android:textColor="@color/colorPrimary"/>
+
+            <!-- Kartu Metadata -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="1dp"
+                android:backgroundTint="@color/white">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <!-- Baris No. Katalog -->
+                    <TableRow>
+                        <TextView style="@style/TableKey" android:text="No. Katalog" />
+                        <TextView style="@style/TableColon" android:text=":" />
+                        <TextView style="@style/TableValuePublikasi" android:id="@+id/tv_no_katalog" tools:text="1102001.1805" />
+                    </TableRow>
+
+                    <!-- Baris No. Publikasi -->
+                    <TableRow android:layout_marginTop="8dp">
+                        <TextView style="@style/TableKey" android:text="No. Publikasi" />
+                        <TextView style="@style/TableColon" android:text=":" />
+                        <TextView style="@style/TableValuePublikasi" android:id="@+id/tv_no_publikasi" tools:text="18050.2505" />
+                    </TableRow>
+
+                    <!-- Baris ISSN -->
+                    <TableRow android:layout_marginTop="8dp">
+                        <TextView style="@style/TableKey" android:text="ISSN" />
+                        <TextView style="@style/TableColon" android:text=":" />
+                        <TextView style="@style/TableValuePublikasi" android:id="@+id/tv_issn" tools:text="0215-4084" />
+                    </TableRow>
+
+                    <!-- Baris Ukuran File -->
+                    <TableRow android:layout_marginTop="8dp">
+                        <TextView style="@style/TableKey" android:text="Ukuran File" />
+                        <TextView style="@style/TableColon" android:text=":" />
+                        <TextView style="@style/TableValuePublikasi" android:id="@+id/tv_ukuran_file" tools:text="5.77 MB" />
+                    </TableRow>
+                </TableLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Abstrak -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Abstrak"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_abstract"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4dp"
+                android:justificationMode="inter_word"
+                tools:text="Lampung Tengah Dalam Angka 2025 merupakan publikasi tahunan yang diterbitkan oleh BPS Kabupaten Lampung Tengah..."
+                android:textColor="@color/colorPrimary"/>
+
+            <!-- Tombol Aksi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_unduh"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Unduh"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_download"
+                    app:iconTint="@color/white"
+                    android:backgroundTint="@color/colorPrimary"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

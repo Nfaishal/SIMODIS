@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Beranda" />
+    <item
+        android:id="@+id/publikasiFragment"
+        android:icon="@drawable/ic_publikasi"
+        android:title="Publikasi" />
+    <item
+        android:id="@+id/dataFragment"
+        android:icon="@drawable/ic_data"
+        android:title="Portal Data" />
+    <item
+        android:id="@+id/informasiFragment"
+        android:icon="@drawable/ic_info"
+        android:title="Info" />
+</menu>

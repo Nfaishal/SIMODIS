@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#888888</color>
+    <color name="grey_light">#CECECE</color>
+
+    <color name="colorPrimary">#2B363C</color>
+    <color name="colorPrimaryDark">#1E272C</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSoftPrimary">#F5FBFF</color>
+
+    <color name="blue">#05408E</color>
+    <color name="green">#07A62C</color>
+    <color name="orange">#DCA305</color>
+
+    <color name="tombolLihat">#1FC2BF</color>
+    <color name="tombolUnduh">#4CD3AA</color>
+</resources>

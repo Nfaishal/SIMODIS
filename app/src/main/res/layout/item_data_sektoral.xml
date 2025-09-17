@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/grey_light"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/gradient_bg_light_grey">
+
+        <TextView
+            android:id="@+id/tv_judul_tabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Jumlah Pembangunan Rumah Tidak Layak Huni (RTLH) menurut Kecamatan dan Sumber Pendanaan" />
+
+        <TextView
+            android:id="@+id/tv_sumber_instansi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            tools:text="Dinas Perumahan dan Kawasan Permukiman Kabupaten Lampung Tengah"
+            android:textColor="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_lihat"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lihat"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:icon="@drawable/ic_eye"
+                app:iconTint="@color/white"
+                app:iconSize="16dp"
+                app:cornerRadius="15dp"
+                android:backgroundTint="@color/tombolLihat" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_unduh"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Unduh"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:icon="@drawable/ic_download"
+                app:iconTint="@color/white"
+                app:iconSize="16dp"
+                app:cornerRadius="15dp"
+                android:backgroundTint="@color/tombolUnduh"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
