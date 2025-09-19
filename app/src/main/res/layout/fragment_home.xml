@@ -19,15 +19,31 @@
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="Logo SIMODIS" />
 
+    <!-- Help/Tour Button -->
+    <ImageView
+        android:id="@+id/btn_help"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="4dp"
+        android:src="@drawable/ic_help"
+        android:contentDescription="Bantuan"
+        app:layout_constraintBottom_toBottomOf="@+id/logo_simodis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/logo_simodis"
+        app:tint="@color/colorPrimary" />
+
     <ImageView
         android:id="@+id/logo_bps"
-        android:layout_width="64dp"
-        android:layout_height="65dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="Logo BPS"
         android:src="@drawable/ic_web"
         app:layout_constraintBottom_toBottomOf="@+id/logo_simodis"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logo_simodis"
         app:layout_constraintTop_toTopOf="@+id/logo_simodis" />
 
     <TextView
@@ -67,7 +83,7 @@
         app:boxStrokeColor="@color/colorPrimary"
         app:layout_constraintTop_toBottomOf="@+id/tv_sub_sapaan"
         app:layout_constraintStart_toStartOf="@+id/tv_sapaan"
-        app:layout_constraintEnd_toEndOf="@+id/logo_bps"
+        app:layout_constraintEnd_toEndOf="@+id/btn_help"
         app:endIconDrawable="@drawable/ic_search"
         app:endIconMode="custom"
         app:endIconTint="@color/colorPrimary"
@@ -84,6 +100,96 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Color Legend -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/color_legend_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/grey_light"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/search_input_layout"
+        app:layout_constraintStart_toStartOf="@+id/search_input_layout"
+        app:layout_constraintEnd_toEndOf="@+id/search_input_layout">
+
+        <LinearLayout
+            android:id="@+id/color_legend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/circle"
+                    android:backgroundTint="#00FF5E"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pertanian"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/circle"
+                    android:backgroundTint="#FFAE00"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ekonomi"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/circle"
+                    android:backgroundTint="#00C8FF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kependudukan"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
     <!-- RecyclerView untuk menampilkan grid kartu -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_indikator"
@@ -93,7 +199,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@+id/search_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/color_legend_card"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

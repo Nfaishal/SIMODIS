@@ -1,5 +1,6 @@
 package com.example.simodis.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import com.example.simodis.R;
+import com.example.simodis.ui.OnboardingActivity;
 import com.example.simodis.data.model.IndikatorStrategis;
 import com.example.simodis.data.network.RetrofitClient;
 import com.example.simodis.databinding.FragmentHomeBinding;
@@ -45,6 +47,7 @@ public class HomeFragment extends Fragment implements IndikatorAdapter.OnItemCli
         setupRecyclerView();
         fetchIndikatorData("");
         setupSearchListener();
+        setupHelpButtonListener();
     }
 
     private void setupRecyclerView() {
@@ -119,6 +122,14 @@ public class HomeFragment extends Fragment implements IndikatorAdapter.OnItemCli
         bundle.putInt("indikator_id", indikatorId);
 
         Navigation.findNavController(requireView()).navigate(R.id.action_homeFragment_to_indikatorDetailFragment, bundle);
+    }
+
+    private void setupHelpButtonListener() {
+        binding.btnHelp.setOnClickListener(v -> {
+            // Membuat Intent untuk memulai OnboardingActivity
+            Intent intent = new Intent(getActivity(), OnboardingActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override

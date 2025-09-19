@@ -11,6 +11,8 @@ retrofit = "2.9.0"
 glide = "4.16.0"
 navigation = "2.7.7"
 mpandroidchart = "v3.1.0"
+appintro = "6.3.1"
+taptargetview = "1.13.3"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -20,6 +22,9 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+appintro = { group = "com.github.AppIntro", name = "AppIntro", version.ref = "appintro" }
+taptargetview = { group = "com.getkeepsafe.taptargetview", name = "taptargetview", version.ref = "taptargetview" }
+
 
 # MPandroidchart (grafik)
 mpandroidchart = { group = "com.github.PhilJay", name = "MPAndroidChart", version.ref = "mpandroidchart" }
