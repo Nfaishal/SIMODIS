@@ -14,6 +14,19 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <!-- Style untuk Bottom Nav -->
+    <style name="BottomNavigationStyle">
+        <item name="itemIconSize">24dp</item>
+        <item name="itemIconTint">@color/bottom_nav_item_color_state</item>
+        <item name="itemTextColor">@color/colorPrimary</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <!-- Alternatif: Style untuk text appearance -->
+    <style name="BottomNavigationTextAppearance" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">10sp</item>
+    </style>
+
     <!-- Style untuk Card di Halaman Informasi -->
     <style name="InfoCardStyle" parent="Widget.MaterialComponents.CardView">
         <item name="android:layout_width">match_parent</item>
@@ -68,7 +81,7 @@
         <item name="android:layout_marginTop">4dp</item>
     </style>
 
-    <!-- DITAMBAHKAN: Style untuk membuat ImageView memiliki ujung rounded -->
+    <!-- Style untuk membuat ImageView memiliki ujung rounded -->
     <style name="RoundedImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item> <!-- Anda bisa menyesuaikan radiusnya di sini -->
@@ -118,6 +131,17 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Style untuk Data Pembanding -->
+    <style name="TableValueProvinsi" parent="TableValue">
+        <item name="android:textColor">#0000FF</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TableValueNasional" parent="TableValue">
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:textStyle">italic</item>
     </style>
 
 </resources>

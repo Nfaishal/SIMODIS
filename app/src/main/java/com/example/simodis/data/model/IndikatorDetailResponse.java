@@ -8,8 +8,12 @@ public class IndikatorDetailResponse {
     private IndikatorMaster master;
     @SerializedName("history")
     private List<IndikatorNilai> history;
+    @SerializedName("pembanding")
+    private List<IndikatorPembanding> pembanding;
 
     // Buat Getter untuk semua variabel
     public IndikatorMaster getMaster() { return master; }
     public List<IndikatorNilai> getHistory() { return history; }
+    public List<IndikatorPembanding> getPembanding() { return pembanding; }
+
 }

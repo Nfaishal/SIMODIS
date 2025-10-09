@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import com.example.simodis.ui.OnboardingActivity;
 import com.example.simodis.data.model.IndikatorStrategis;
 import com.example.simodis.data.network.RetrofitClient;
 import com.example.simodis.databinding.FragmentHomeBinding;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
@@ -74,7 +77,17 @@ public class HomeFragment extends Fragment implements IndikatorAdapter.OnItemCli
                 if (response.isSuccessful() && response.body() != null) {
                     adapter.filterList((ArrayList<IndikatorStrategis>) response.body());
                 } else {
-                    Toast.makeText(getContext(), "Gagal memuat data.", Toast.LENGTH_SHORT).show();
+                    // LOGGING DITAMBAHKAN DI SINI
+                    String errorBody = "No error body";
+                    try {
+                        if (response.errorBody() != null) {
+                            errorBody = response.errorBody().string();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Log.e("API_ERROR", "Code: " + response.code() + ", Message: " + response.message() + ", Body: " + errorBody);
+                    Toast.makeText(getContext(), "Gagal memuat data (Code: " + response.code() + ")", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -82,6 +95,7 @@ public class HomeFragment extends Fragment implements IndikatorAdapter.OnItemCli
             public void onFailure(@NonNull Call<List<IndikatorStrategis>> call, @NonNull Throwable t) {
                 if (binding == null) return; // Mencegah crash
                 binding.progressBar.setVisibility(View.GONE);
+                Log.e("API_FAILURE", "Error: " + t.getMessage());
                 Toast.makeText(getContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

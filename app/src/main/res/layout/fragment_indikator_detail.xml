@@ -57,114 +57,198 @@
         app:layout_constraintStart_toEndOf="@+id/btn_back"
         app:layout_constraintTop_toTopOf="@+id/btn_back" />
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="120dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.indikator.IndikatorDetailFragment">
-
-    <LinearLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp">
+        android:layout_height="match_parent"
+        tools:context=".ui.indikator.IndikatorDetailFragment">
 
-        <!-- Chip Judul Indikator -->
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_indicator_title"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:backgroundTint="@color/white"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:chipStrokeWidth="1.5dp"
-            app:chipStrokeColor="@color/colorPrimary"
-            app:chipCornerRadius="30dp"
-            tools:text="Indeks Pembangunan Manusia (IPM)"
-            android:textColor="@color/colorPrimary"/>
-
-        <!-- Deskripsi -->
-        <TextView
-            android:id="@+id/tv_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            tools:text="IPM adalah indeks komposit yang mengukur pembangunan manusia dari tiga aspek dasar..."
-            android:textColor="@color/black"/>
-
-        <!-- Tabel Data 3 Tahun Terakhir -->
-        <LinearLayout
-            android:id="@+id/table_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_table_border"
-            android:orientation="vertical">
-            <!-- Header Tabel -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:orientation="horizontal">
-                <TextView style="@style/TableHeader" android:id="@+id/tv_year1_header" tools:text="2022"/>
-                <TextView style="@style/TableHeader" android:id="@+id/tv_year2_header" tools:text="2023"/>
-                <TextView style="@style/TableHeader" android:id="@+id/tv_year3_header" tools:text="2024"/>
-            </LinearLayout>
-            <!-- Nilai Tabel -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView style="@style/TableValue" android:id="@+id/tv_year1_value" tools:text="72,59"/>
-                <TextView style="@style/TableValue" android:id="@+id/tv_year2_value" tools:text="73,39"/>
-                <TextView style="@style/TableValue" android:id="@+id/tv_year3_value" tools:text="74,16"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Tombol Aksi -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp">
+
+            <!-- Chip Judul Indikator -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_indicator_title"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/white"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:chipStrokeWidth="1.5dp"
+                app:chipStrokeColor="@color/colorPrimary"
+                app:chipCornerRadius="30dp"
+                tools:text="Indeks Pembangunan Manusia (IPM)"
+                android:textColor="@color/colorPrimary"/>
+
+            <!-- Deskripsi -->
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                tools:text="IPM adalah indeks komposit yang mengukur pembangunan manusia dari tiga aspek dasar..."
+                android:textColor="@color/black"/>
+
+            <!-- Tabel Data 3 Tahun Terakhir -->
+            <LinearLayout
+                android:id="@+id/table_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_table_border"
+                android:orientation="vertical">
+                <!-- Header Tabel -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+                    <TextView style="@style/TableHeader" android:id="@+id/tv_year1_header" tools:text="2022"/>
+                    <TextView style="@style/TableHeader" android:id="@+id/tv_year2_header" tools:text="2023"/>
+                    <TextView style="@style/TableHeader" android:id="@+id/tv_year3_header" tools:text="2024"/>
+                </LinearLayout>
+                <!-- Nilai Tabel -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/row_main_data">
+                    <TextView style="@style/TableValue" android:id="@+id/tv_year1_value" tools:text="72,59"/>
+                    <TextView style="@style/TableValue" android:id="@+id/tv_year2_value" tools:text="73,39"/>
+                    <TextView style="@style/TableValue" android:id="@+id/tv_year3_value" tools:text="74,16"/>
+                </LinearLayout>
+                <!-- Tabel Pembanding Provinsi-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/row_provinsi_data">
+                    <TextView style="@style/TableValueProvinsi" android:id="@+id/tv_provinsi_year1_value" tools:text="72,59"/>
+                    <TextView style="@style/TableValueProvinsi" android:id="@+id/tv_provinsi_year2_value" tools:text="73,39"/>
+                    <TextView style="@style/TableValueProvinsi" android:id="@+id/tv_provinsi_year3_value" tools:text="74,16"/>
+                </LinearLayout>
+                <!-- Tabel Pembanding Nasional-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/row_nasional_data">
+                    <TextView style="@style/TableValueNasional" android:id="@+id/tv_nasional_year1_value" tools:text="72,59"/>
+                    <TextView style="@style/TableValueNasional" android:id="@+id/tv_nasional_year2_value" tools:text="73,39"/>
+                    <TextView style="@style/TableValueNasional" android:id="@+id/tv_nasional_year3_value" tools:text="74,16"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Tombol Aksi Excel dan PDF -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_unduh_excel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="Unduh Excel"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/colorPrimary"
+                    app:icon="@drawable/ic_download"
+                    app:iconTint="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_unduh_pdf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="Unduh PDF"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/Unduhpdf"
+                    app:icon="@drawable/ic_download"
+                    app:iconTint="@color/white" />
+            </LinearLayout>
+
+            <!-- Grafik -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/line_chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp" />
+
+            <!-- Toggle Buttons untuk Data Pembanding -->
+            <LinearLayout
+                android:id="@+id/layout_toggle_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_toggle_provinsi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="Data Provinsi"
+                    android:textColor="@color/colorPrimary"
+                    android:backgroundTint="@color/white"
+                    app:strokeColor="@color/colorPrimary"
+                    app:strokeWidth="1dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_toggle_nasional"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="Data Nasional"
+                    android:textColor="@color/colorPrimary"
+                    android:backgroundTint="@color/white"
+                    app:strokeColor="@color/colorPrimary"
+                    app:strokeWidth="1dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            </LinearLayout>
+
+            <!-- Tombol Unduh Grafik -->
             <Button
-                android:id="@+id/btn_unduh_excel"
-                android:layout_width="0dp"
+                android:id="@+id/btn_unduh_grafik"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Unduh excel"
+                android:layout_marginTop="8dp"
+                android:text="Unduh Grafik"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/colorPrimary"
                 app:icon="@drawable/ic_download"
-                app:iconTint="@color/white"
-                />
+                app:iconTint="@color/white" />
+
+            <!-- Tombol Sumber -->
+            <Button
+                android:id="@+id/btn_sumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Sumber"
+                android:textColor="@color/colorPrimary"
+                android:backgroundTint="@color/white"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="1dp"
+                app:icon="@drawable/ic_browse"
+                app:iconTint="@color/colorPrimary"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
         </LinearLayout>
-
-        <!-- Grafik -->
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/line_chart"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="16dp" />
-
-        <!-- Tombol Unduh Grafik -->
-        <Button
-            android:id="@+id/btn_unduh_grafik"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Unduh Grafik"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/colorPrimary"
-            app:icon="@drawable/ic_download"
-            app:iconTint="@color/white" />
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
