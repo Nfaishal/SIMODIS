@@ -32,9 +32,7 @@ public interface ApiService {
 
 
     @GET("api/publikasi")
-    Call<PublikasiResponse> getPublikasi();
-    @GET("api/publikasi/{page}")
-    Call<PublikasiResponse> getPublikasi(@Path("page") int page);
+    Call<PublikasiResponse> getPublikasi(@Query("page") int page);
     @GET("api/publikasi/search")
     Call<JsonElement> searchPublikasi(@Query("keyword") String keyword);
     @GET("api/publikasi/populer")

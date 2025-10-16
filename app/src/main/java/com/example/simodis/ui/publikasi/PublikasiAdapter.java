@@ -52,12 +52,12 @@ public class PublikasiAdapter extends RecyclerView.Adapter<PublikasiAdapter.Publ
         return publikasiList.size();
     }
 
-    /**
-     * Metode untuk memperbarui daftar di adapter dengan hasil filter atau data baru.
-     * @param filteredList Daftar hasil filter yang baru.
-     */
-    public void filterList(ArrayList<Publikasi> filteredList) {
-        this.publikasiList = filteredList;
+    public void updateData(ArrayList<Publikasi> newList) {
+        // Kosongkan list yang ada saat ini
+        this.publikasiList.clear();
+        // Tambahkan semua data baru ke dalam list
+        this.publikasiList.addAll(newList);
+        // Beri tahu RecyclerView bahwa datanya telah berubah dan perlu di-refresh
         notifyDataSetChanged();
     }
 
